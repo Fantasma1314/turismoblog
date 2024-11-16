@@ -1,5 +1,6 @@
 /* Fondo principal */
 .home-container {
+    padding: 1%;
     background: url("/login.jpg") no-repeat center center/cover;
     min-height: 100vh;
     display: flex;

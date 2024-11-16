@@ -1,6 +1,9 @@
 /* Results*/
 
-
+.Results {
+    padding: 1%;
+    
+}
 .Results .header{
     background-color: #ddd;
     border-radius: 40px;
@@ -68,29 +71,84 @@
     overflow-x: auto; /* Para hacerla responsive en pantallas pequeñas */
 }
 
-/* Estilos para la tabla */
-table {
+
+/* Contenedor de las tarjetas */
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre las tarjetas */
+    justify-content: center; /* Centra las tarjetas */
+    padding: 20px;
+}
+
+/* Estilos para cada tarjeta */
+.card {
+    position: relative;
+    text-align: justify;
+    overflow: hidden;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px; /* Ajusta el ancho de la tarjeta */
+    transition: transform 0.3s ease;
+    text-shadow: 1px 1px 2px black;
+}
+
+/* Imagen de fondo con desenfoque */
+.card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px); /* Ajusta la intensidad del desenfoque */
+    z-index: 1;
+}
+
+/* Contenido de la tarjeta */
+.card-content {
+    position: relative;
+    z-index: 2; /* Coloca el contenido encima de la imagen de fondo */
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 10px;
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
 }
 
-th, td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+.card h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #ffffff;
 }
 
-/* Estilos para la cabecera de la tabla */
-thead th {
-    background-color: #f7f7f7;
-    color: #333;
-    font-weight: bold;
+.card p {
+    margin: 5px 0;
+    color: #ffffff;
 }
 
-/* Alterna el color de las filas */
-tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+/* Botones de acción dentro de las tarjetas */
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.actions button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 18px;
+    color: #555;
+    transition: transform 0.3s ease;
+}
+
+.actions button:hover {
+    transform: scale(1.1);
 }
 
 /* Estilos para los botones de acción */
