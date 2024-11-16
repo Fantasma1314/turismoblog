@@ -1,22 +1,19 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import "../styles/home.css";
 
 export const Home = () => {
     const [destinations, setDestinations] = useState([]);
     const navigate = useNavigate();
-    const [user, setUser] = useState(null); // Estado para el usuario
+    const [user, setUser] = useState(null);
 
-
-    //Verificacion si el usuario ha iniciado sesión
     useEffect(() => {
         const storedUser = JSON.parse(localStorage.getItem("user"));
         if (storedUser) {
-            setUser(storedUser); // Si el usuario está en localStorage, actualizar el estado
+            setUser(storedUser);
         }
-    }, []); 
+    }, []);
 
-    // Obtener destinos desde MockAPI al cargar el componente
     useEffect(() => {
         const fetchDestinations = async () => {
             try {
@@ -31,31 +28,29 @@ export const Home = () => {
         fetchDestinations();
     }, []);
 
-        
-    // Cerrar sesión
     const handleLogout = () => {
-        localStorage.removeItem("user"); // Remover usuario de localStorage
-        setUser(null); // Limpiar estado del usuario
-        navigate("/"); // Redirigir a la página inicial
+        localStorage.removeItem("user");
+        setUser(null);
+        navigate("/");
     };
 
     return (
         <div className="home-container">
-            {/* Header */}
             <header className="header">
                 <div className="logo">
-                    <img src="/turismo.jpg" alt="Logo pagina" />
-                    <h2>Turismo Blog</h2>                    
-                </div>
+                    <img src="turismo.jpg" alt="Logo pagina" />
+                    <h2>Turismo Blog</h2>
+                </div>                    
                 <nav className="nav-links">
                     {user ? (
                         <>
-                            <button>
-                                    <Link to="/results">
-                                        <i className='bx bxs-book-bookmark' ></i>Mis destinos
-                                    </Link>
-                                </button>
-                            <button onClick={handleLogout}><i class='bx bx-log-out' ></i></button>
+                            <button className="btn">
+                                <Link to="/results">
+                                    <i className='bx bxs-book-bookmark'></i>
+                                    <span>Mis destinos</span>
+                                </Link>
+                            </button>
+                            <button onClick={handleLogout} className="btn"><i className='bx bx-log-out'></i></button>
                         </>
                     ) : (
                         <>
@@ -66,8 +61,18 @@ export const Home = () => {
                 </nav>
             </header>
 
-            {/* Lista de destinos turísticos */}
-            <main className="destinations-list">
+            <main className="main-content">
+                <div className="main-left">
+                    <h1>Elige tu lugar turístico favorito ahora</h1>
+                    <p>Descubre los mejores destinos para tus próximas vacaciones. Explora nuestras recomendaciones y elige el lugar perfecto.</p>
+                </div>
+                <div className="main-right">
+                    <img src="./tur.png" alt="Imagen de turismo" />
+                </div>
+            </main>
+            <h1 className="section-title">Explora Nuestros Destinos Turísticos</h1>
+            <section className="destinations-list">
+                
                 {destinations.length > 0 ? (
                     destinations.map((destination) => (
                         <div key={destination.id} className="destination-card">
@@ -77,13 +82,12 @@ export const Home = () => {
                                 <img src={destination.imageUrl} alt={destination.name} />
                             )}
                             <p>{destination.review}</p>
-
                         </div>
                     ))
                 ) : (
                     <p>No hay destinos disponibles.</p>
                 )}
-            </main>
+            </section>
         </div>
     );
 };

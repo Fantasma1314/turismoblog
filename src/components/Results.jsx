@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "../styles/results.css"
 
 export const Results = () => {
     const [locations, setLocations] = useState([]);
@@ -48,42 +49,47 @@ export const Results = () => {
     return (
         <main className="Results">
             <header className="header">
-                <button onClick={() => navigate("/")}>Página Principal</button>
-                <button onClick={() => navigate("/create-destination")}>Crear Destino</button>
+                
+                <button onClick={() => navigate("/")} className="btn"><i className='bx bx-home-alt-2' ></i>Página Principal</button>
+
+                <button onClick={() => navigate("/create-destination")} className="btn">
+                    <i className='bx bx-bookmark-alt-plus'></i>Crear Destino</button>
+
                 <button
                     onClick={() => {
                         localStorage.removeItem("user");
                         navigate("/");
-                    }}
-                >
-                    <i class='bx bx-log-out' ></i>
+                    }} className="btn">
+                    <i className='bx bx-log-out'></i>Cerrar Sesión
                 </button>
             </header>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Ubicación</th>
-                        <th>Reseña</th>
-                        <th>Calificación</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {locations.map((location) => (
-                        <tr key={location.id}>
-                            <td>{location.name}</td>
-                            <td>{location.location}</td>
-                            <td>{location.review}</td>
-                            <td>{location.rating}</td>
-                            <td>
-                                <button onClick={() => handleEdit(location.id)}>Editar</button>
-                                <button onClick={() => handleDelete(location.id)}>Eliminar</button>
-                            </td>
+            <div className="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Ubicación</th>
+                            <th>Reseña</th>
+                            <th>Calificación</th>
+                            <th>Acciones</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {locations.map((location) => (
+                            <tr key={location.id}>
+                                <td>{location.name}</td>
+                                <td>{location.location}</td>
+                                <td>{location.review}</td>
+                                <td>{location.rating}</td>
+                                <td>
+                                    <button onClick={() => handleEdit(location.id)}><i className='bx bx-edit-alt' ></i></button>
+                                    <button onClick={() => handleDelete(location.id)}><i className='bx bx-trash'></i></button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </main>
     );
 };

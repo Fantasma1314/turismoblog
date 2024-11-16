@@ -31,4 +31,6 @@ export const router = createBrowserRouter([
             path: "/edit-destination/:id",
             Component: EditDestination
         },
-    ]);
+    ], {
+        basename: '/turismoblog', // Asegúrate de poner el nombre de tu repositorio aquí
+    });
