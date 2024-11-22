@@ -65,12 +65,9 @@ export const Home = () => {
             </header>
 
             <main className="main-content">
-                <div className="main-left">
+                <div className="main">
                     <h1>Elige tu lugar turístico favorito ahora</h1>
                     <p>Descubre los mejores destinos para tus próximas vacaciones. Explora nuestras recomendaciones y elige el lugar perfecto.</p>
-                </div>
-                <div className="main-right">
-                    <img src="./tur.png" alt="Imagen de turismo" />
                 </div>
             </main>
             <h1 className="section-title">Explora Nuestros Destinos Turísticos</h1>

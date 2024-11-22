@@ -1,175 +1,172 @@
-/* General styles */
+/* Configuración global */
 .CreateDestination body {
-    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background: linear-gradient(to bottom, #4a148c, #c158dc);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    background-color: #0d0d0d;
+    color: #ffffff;
 }
 
-/* Header styles */
+/* Contenedor principal */
+.CreateDestination {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* Header */
 .CreateDestination .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem 2rem;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 1200px;
+    padding: 1rem 2rem;
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid #333333;
+    border-radius: 8px;
 }
 
 .CreateDestination .header .btn {
-    background-color: #ffffff20;
-    border: none;
-    color: #fff;
-    font-size: 18px;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background: none;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
 .CreateDestination .header .btn:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background: #ffffff;
+    color: #0d0d0d;
+    transform: translateY(-3px);
 }
 
 .CreateDestination .header .btn i {
-    margin-right: 0.5rem;
+    font-size: 20px;
 }
 
-/* Main container */
-.CreateDestination {
+/* Formulario */
+.CreateDestination .form {
     width: 100%;
-    max-width: 400px;
-    background-color: rgba(255, 255, 255, 0.15);
+    max-width: 800px;
+    background: linear-gradient(145deg, #1e1e1e, #252525);
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+    border: 1px solid #333333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.CreateDestination .form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.8);
+}
+
+.CreateDestination .form h1 {
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
     text-align: center;
-    margin: 6rem auto 2rem; /* Ajuste para evitar solapamiento con el header */
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* Form styles */
-.CreateDestination form {
-    width: 100%;
-}
-
-.CreateDestination form h1 {
-    font-size: 24px;
+.CreateDestination .form fieldset {
+    border: none;
     margin-bottom: 1.5rem;
 }
 
-.CreateDestination form .error {
-    background-color: rgba(255, 0, 0, 0.2);
-    color: #ff6666;
-    padding: 0.5rem;
-    border-radius: 6px;
+.CreateDestination .form label {
+    display: block;
     margin-bottom: 1rem;
 }
 
-/* Fieldset and labels */
-.CreateDestination fieldset {
-    border: none;
-    margin-bottom: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.CreateDestination fieldset label {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.CreateDestination fieldset label span {
-    font-size: 14px;
+.CreateDestination .form span {
+    display: block;
+    font-weight: 600;
+    color: #ffffff;
     margin-bottom: 0.5rem;
-    color: #fff;
 }
 
-.CreateDestination fieldset input, 
-fieldset textarea {
+.CreateDestination .form input,
+.CreateDestination .form textarea {
     width: 100%;
-    padding: 0.8rem;
-    border: none;
-    border-radius: 6px;
-    font-size: 14px;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: #fff;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    color: #ffffff;
+    background: #0d0d0d;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.CreateDestination .form input:focus,
+.CreateDestination .form textarea:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
     outline: none;
-    transition: background-color 0.3s ease;
 }
 
-.CreateDestination fieldset input:focus, 
-fieldset textarea:focus {
-    background-color: rgba(255, 255, 255, 0.3);
-}
-
-.CreateDestination textarea {
+.CreateDestination .form textarea {
     resize: none;
-    min-height: 80px;
+    height: 100px;
 }
 
-/* Button styles */
-.CreateDestination button {
-    background-color: #ffb40e;
-    color: #000;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
+.CreateDestination .form button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    color: #0d0d0d;
+    background: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.CreateDestination button:hover {
-    background-color: #ff9e00;
+.CreateDestination .form button:hover {
+    background: #dddddd;
+    transform: translateY(-3px);
 }
 
-/* Responsive design */
-@media screen and (max-width: 768px) {
-    .CreateDestination .header {
-        padding: 0.6rem 1rem;
-    }
+/* Mensaje de error */
+.CreateDestination .form .error {
+    color: #ff4d4d;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+}
 
-    .CreateDestination .header .btn {
-        font-size: 25px;
-        padding: 0.4rem 0.8rem;
-    }
-
+/* Responsividad */
+@media (max-width: 768px) {
     .CreateDestination {
-        max-width: 90%;
+        padding: 1rem;
+    }
+
+    .CreateDestination .header {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .CreateDestination .form {
         padding: 1.5rem;
     }
 
-    .CreateDestination form h1 {
-        font-size: 20px;
-    }
-
-    .CreateDestination span {
+    .CreateDestination .header span {
         display: none;
+        
     }
 
-    .CreateDestination fieldset input, 
-    fieldset textarea {
-        font-size: 12px;
-        padding: 0.6rem;
-    }
-
-    .CreateDestination button {
-        padding: 0.6rem 1.2rem;
-        font-size: 14px;
-    }
 }

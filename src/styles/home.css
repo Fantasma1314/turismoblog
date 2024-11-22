@@ -1,7 +1,6 @@
 /* Fondo principal */
 .home-container {
-    padding: 1%;
-    background: url("/login.jpg") no-repeat center center/cover;
+    padding: 0%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -78,53 +77,52 @@
     font-size: 2rem;
 }
 
-/* Contenedor principal con título y carrusel */
+
+/* Fondo principal y contenido centrado */
 .main-content {
+    position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 80vh;
-    padding-top: 100px; /* Ajuste para header fijo */
-    width: 100%;
-}
-
-/* Texto principal (izquierda) */
-.main-left {
-    flex: 1;
-    padding: 20px;
     text-align: center;
+    min-height: 80vh;
+    background: url("/mons.jpg") no-repeat center center/cover;
+    padding-top: 100px;
+    color: #ffffff;
+    z-index: 1;
+
+    /* Máscara para el desvanecimiento */
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
+    -webkit-mask-size: 100% 100%;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
+    mask-size: 100% 100%;
 }
 
-.main-left h1 {
-    font-size: 5rem;
+/* Título principal */
+.main-content h1 {
+    font-size: 4rem;
     margin-bottom: 20px;
     color: #ffffff;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Efecto de sombra en el texto */
 }
 
-.main-left p {
-    font-size: 1.2rem;
+/* Descripción */
+.main-content p {
+    font-size: 1.5rem;
     color: #ffffff;
-    max-width: 400px;
+    max-width: 600px;
     margin: 0 auto;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Efecto de sombra en el texto */
 }
 
-/* Carrusel de imágenes (derecha) */
+/* Ocultar la imagen derecha eliminada */
 .main-right {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: none;
 }
 
-.main-right img {
-    max-width: 450px;
-    height: auto;
-    border-radius: 10px;
-    filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.5));
-
-}
 
 /* Lista de destinos turísticos */
 .section-title {

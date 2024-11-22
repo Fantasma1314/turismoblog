@@ -57,7 +57,13 @@ export const CreateDestination = () => {
 
             <header className="header">
                 <button onClick={() => navigate("/")} className="btn">
-                    <i className="bx bx-home-alt-2"></i>Página Principal
+                    <i className="bx bx-home-alt-2"></i>
+                    <span>Página Principal</span>
+                </button>
+
+                <button onClick={() => navigate("/Results")} className="btn">
+                    <i className="bx bx-bookmark-alt-plus"></i>
+                    <span>Mis Destinos</span>
                 </button>
 
                 <button
@@ -67,7 +73,8 @@ export const CreateDestination = () => {
                     }}
                     className="btn"
                 >
-                    <i className="bx bx-log-out"></i>Cerrar Sesión
+                    <i className="bx bx-log-out"></i>
+                    <span>Cerrar Sesión</span>
                 </button>
             </header>
             <div className="form">
@@ -124,6 +131,7 @@ export const CreateDestination = () => {
                     <button>Crear Destino</button>
                 </form>
             </div>
+            
         </main>
     );
 };
