@@ -64,11 +64,13 @@ export const Results = () => {
         <main className="Results">
             <header className="header">
                 <button onClick={() => navigate("/")} className="btn">
-                    <i className="bx bx-home-alt-2"></i>Página Principal
+                    <i className="bx bx-home-alt-2"></i>
+                    <span>Página Principal</span>
                 </button>
 
                 <button onClick={() => navigate("/create-destination")} className="btn">
-                    <i className="bx bx-bookmark-alt-plus"></i>Crear Destino
+                    <i className="bx bx-bookmark-alt-plus"></i>
+                    <span>Crear Destino</span>
                 </button>
 
                 <button
@@ -78,7 +80,8 @@ export const Results = () => {
                     }}
                     className="btn"
                 >
-                    <i className="bx bx-log-out"></i>Cerrar Sesión
+                    <i className="bx bx-log-out"></i>
+                    <span>Cerrar Sesión</span>
                 </button>
             </header>
             <div className="card-container">
@@ -105,6 +108,7 @@ export const Results = () => {
                                 </button>
                                 <button onClick={() => handleDelete(location.id)}>
                                     <i className="bx bx-trash"></i>
+                                    
                                 </button>
                             </div>
                         </div>

@@ -1,279 +1,136 @@
-/* Results*/
+/* Estilos generales para el componente Results */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #181818;
+    color: #fff;
+}
 
 .Results {
-    padding: 1%;
-    
-}
-.Results .header{
-    background-color: #ddd;
-    border-radius: 40px;
-    display: flex;
-    position: relative;
-    width: 100%;
-    height: 70px;
-    margin: 30px 0;
-    background: url("/login.jpg") no-repeat;
-    background-position: center;
-    box-shadow: #fff;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    gap: 10%;
+    padding: 7%;
 }
 
-.Results .btn {
-    width: 20%;
-    height: 45px;
-    background: transparent;
-    backdrop-filter: blur(20px);
-    border: none;
-    outline: none;
-    border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    cursor: pointer;
-    font-size: 16px;
-    color: #333;
-    font-weight: 600;
-    display: flex;
-    align-items: center; /* Centra verticalmente el icono y el texto */
-    justify-content: center; /* Centra horizontalmente */
-    gap: 8px; /* Espacio entre el icono y el texto */
-    transition: transform 0.3s ease;
-}
-
-
-.Results .btn i{
-    font-size: 10px;
-    text-align: center;
-}
-
-.Results .btn:hover {
-    transform: scale(1.05); /* Agranda ligeramente el botón al pasar el mouse */
-}
-
-/* Aplica el efecto al icono específicamente */
-.Results .btn i {
-    font-size: 28px;
-    transition: transform 0.3s ease;
-}
-
-.Results .btn:hover i {
-    transform: scale(1.2); /* Agranda solo el icono */
-}
-
-/* Estilos para el contenedor de la tabla */
-.table-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px 0;
-    overflow-x: auto; /* Para hacerla responsive en pantallas pequeñas */
-}
-
-
-/* Contenedor de las tarjetas */
-
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Espacio entre las tarjetas */
-    justify-content: center; /* Centra las tarjetas */
-    padding: 20px;
-}
-
-/* Estilos para cada tarjeta */
-.card {
-    position: relative;
-    text-align: justify;
-    overflow: hidden;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px; /* Ajusta el ancho de la tarjeta */
-    transition: transform 0.3s ease;
-    text-shadow: 1px 1px 2px black;
-}
-
-/* Imagen de fondo con desenfoque */
-.card-background {
-    position: absolute;
+.Results .header {
+    position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-size: cover;
-    background-position: center;
-    filter: blur(8px); /* Ajusta la intensidad del desenfoque */
-    z-index: 1;
-}
-
-/* Contenido de la tarjeta */
-.card-content {
-    position: relative;
-    z-index: 2; /* Coloca el contenido encima de la imagen de fondo */
-    background: rgba(0, 0, 0, 0.5);
-    padding: 15px;
-    border-radius: 10px;
     width: 100%;
-}
-
-.card h3 {
-    text-align: center;
-    margin-bottom: 10px;
-    color: #ffffff;
-}
-
-.card p {
-    margin: 5px 0;
-    color: #ffffff;
-}
-
-/* Botones de acción dentro de las tarjetas */
-.actions {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
-    margin-top: 15px;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 10px;
+}
+
+.btn {
+    background-color: #3a3a3a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #575757;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 10px;
+    text-align: justify;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #222;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.card-background {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7);
+    transition: filter 0.3s ease;
+}
+
+.card:hover .card-background {
+    filter: brightness(1);
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.card-content p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .actions button {
+    background-color: #3a3a3a;
     border: none;
-    background-color: transparent;
+    padding: 8px;
+    color: #fff;
+    border-radius: 50%;
     cursor: pointer;
-    font-size: 18px;
-    color: #555;
-    transition: transform 0.3s ease;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
 }
 
 .actions button:hover {
-    transform: scale(1.1);
+    background-color: #575757;
 }
 
-/* Estilos para los botones de acción */
-.action-btn {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    margin-right: 5px;
-    transition: background-color 0.3s ease;
+.Results i {
+    font-size: 2rem;
 }
 
-.edit-btn {
-    background-color: #4caf50;
-    color: white;
+.Results span {
+    font-size: 1rem;
 }
 
-.edit-btn:hover {
-    background-color: #45a049;
-}
+/* Responsive design */
+@media screen and (max-width: 768px) {
 
-.delete-btn {
-    background-color: #f44336;
-    color: white;
-}
-
-.delete-btn:hover {
-    background-color: #e53935;
-}
-
-
-/* Crear destinos*/ 
-    .CreateDestination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f0f0f0; /* Fondo sutil para el formulario */
-    padding: 20px;
-}
-
-.CreateDestination form {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    width: 100%;
-    max-width: 500px;
-}
-
-.CreateDestination h1 {
-    text-align: center;
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.CreateDestination .error {
-    color: #ff4d4d;
-    font-size: 14px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-/* Estilos de los campos del formulario */
-.CreateDestination fieldset {
-    border: none;
-    padding: 0;
-    margin: 0;
-}
-
-.CreateDestination label {
-    display: flex;
-    flex-direction: column;
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 15px;
-}
-
-.CreateDestination label span {
-    margin-bottom: 5px;
-    font-weight: 600;
-    color: #333;
-}
-
-.CreateDestination input[type="text"],
-.CreateDestination input[type="url"],
-.CreateDestination textarea {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #333;
-    outline: none;
-    transition: border-color 0.3s ease;
-}
-
-.CreateDestination input[type="text"]:focus,
-.CreateDestination input[type="url"]:focus,
-.CreateDestination textarea:focus {
-    border-color: #ffb40e; /* Color de borde en foco */
-}
-
-.CreateDestination textarea {
-    resize: vertical; /* Permite cambiar el tamaño solo verticalmente */
-    min-height: 100px;
-}
-
-/* Estilos del botón */
-.CreateDestination button {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #ffb40e; /* Color del botón */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-}
-
-.CreateDestination button:hover {
-    background-color: #e5a107; /* Color del botón al pasar el mouse */
+    .Results span{
+        display: none;
+    }
 }

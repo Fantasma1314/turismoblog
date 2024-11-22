@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "../styles/create.css"
+
 
 export const CreateDestination = () => {
     const [error, setError] = useState(null); // Manejo de errores
@@ -52,58 +54,76 @@ export const CreateDestination = () => {
 
     return (
         <main className="CreateDestination">
-            <form onSubmit={handleCreate}>
-                <h1>Crear Destino</h1>
-                {error && <p className="error">{error}</p>} {/* Mostrar mensaje de error si ocurre */}
-                <fieldset>
-                    <label>
-                        <span>Nombre del destino</span>
-                        <input 
-                        name="name" 
-                        type="text" 
-                        placeholder="Nombre" 
-                        required 
-                        />
-                    </label>
-                    <label>
-                        <span>Descripción</span>
-                        <textarea 
-                        name="review" 
-                        placeholder="Descripción"
-                        required
-                        >
-                        </textarea>
-                    </label>
-                    <label>
-                        <span>Ubicación</span>
-                        <input 
-                        name="location" 
-                        type="text" 
-                        placeholder="Ubicación" 
-                        required 
-                        />
-                    </label>
-                    <label>
-                        <span>Calificación</span>
-                        <input 
-                        name="rating" 
-                        type="text" 
-                        placeholder="Calificación" 
-                        required 
-                        />
-                    </label>
-                    <label>
-                        <span>Imagen (URL)</span>
-                        <input 
-                        name="imageUrl" 
-                        type="url" 
-                        placeholder="URL de la imagen" 
-                        />
-                    </label>
 
-                </fieldset>
-                <button>Crear Destino</button>
-            </form>
+            <header className="header">
+                <button onClick={() => navigate("/")} className="btn">
+                    <i className="bx bx-home-alt-2"></i>Página Principal
+                </button>
+
+                <button
+                    onClick={() => {
+                        localStorage.removeItem("user");
+                        navigate("/");
+                    }}
+                    className="btn"
+                >
+                    <i className="bx bx-log-out"></i>Cerrar Sesión
+                </button>
+            </header>
+            <div className="form">
+                <form onSubmit={handleCreate}>
+                    <h1>Crear Destino</h1>
+                    {error && <p className="error">{error}</p>} {/* Mostrar mensaje de error si ocurre */}
+                    <fieldset>
+                        <label>
+                            <span>Nombre del destino</span>
+                            <input 
+                            name="name" 
+                            type="text" 
+                            placeholder="Nombre" 
+                            required 
+                            />
+                        </label>
+                        <label>
+                            <span>Descripción</span>
+                            <textarea 
+                            name="review" 
+                            placeholder="Descripción"
+                            required
+                            >
+                            </textarea>
+                        </label>
+                        <label>
+                            <span>Ubicación</span>
+                            <input 
+                            name="location" 
+                            type="text" 
+                            placeholder="Ubicación" 
+                            required 
+                            />
+                        </label>
+                        <label>
+                            <span>Calificación</span>
+                            <input 
+                            name="rating" 
+                            type="text" 
+                            placeholder="Calificación" 
+                            required 
+                            />
+                        </label>
+                        <label>
+                            <span>Imagen (URL)</span>
+                            <input 
+                            name="imageUrl" 
+                            type="url" 
+                            placeholder="URL de la imagen" 
+                            />
+                        </label>
+
+                    </fieldset>
+                    <button>Crear Destino</button>
+                </form>
+            </div>
         </main>
     );
 };

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import "../styles/edit.css"
 
 export const EditDestination = () => {
     const [error, setError] = useState(null); // Manejo de errores

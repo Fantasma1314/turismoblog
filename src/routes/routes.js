@@ -32,5 +32,5 @@ export const router = createBrowserRouter([
             Component: EditDestination
         },
     ], {
-        basename: '/turismoblog', // Asegúrate de poner el nombre de tu repositorio aquí
+        basename: '/turismoblog/', // Asegúrate de poner el nombre de tu repositorio aquí
     });

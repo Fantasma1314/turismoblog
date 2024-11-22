@@ -1,6 +1,7 @@
 {
   "name": "turismo-blog",
   "private": true,
+  "homepage": "https://fantasma1314.github.io/turismoblog/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

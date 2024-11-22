@@ -47,10 +47,13 @@ export const Home = () => {
                             <button className="btn">
                                 <Link to="/results">
                                     <i className='bx bxs-book-bookmark'></i>
-                                    <span>Mis destinos</span>
+                                    <span>Mis destinos</span>    
                                 </Link>
                             </button>
-                            <button onClick={handleLogout} className="btn"><i className='bx bx-log-out'></i></button>
+                            <button onClick={handleLogout} className="btn"><i className='bx bx-log-out'></i>
+                                <span>Cerrar Sesión</span>
+                            
+                            </button>
                         </>
                     ) : (
                         <>
