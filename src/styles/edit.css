@@ -1,0 +1,234 @@
+/* Configuración global */
+.Edit body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #0d0d0d;
+    color: #ffffff;
+}
+
+/* Contenedor principal */
+.Edit .content {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Formulario */
+.Edit .edit-form {
+    flex: 1 1 50%;
+    background: linear-gradient(145deg, #1e1e1e, #252525);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+    border: 1px solid #333333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Edit .edit-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.8);
+}
+
+.Edit .edit-form h1 {
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.Edit .edit-form fieldset {
+    border: none;
+    margin-bottom: 1.5rem;
+}
+
+.Edit .edit-form label {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.Edit .edit-form span {
+    display: block;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.Edit .edit-form input,
+.edit-form textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    color: #ffffff;
+    background: #0d0d0d;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Edit.edit-form input:focus,
+.edit-form textarea:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    outline: none;
+}
+
+.Edit.edit-form button {
+    display: block;
+    width: 100%;
+    padding: 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #0d0d0d;
+    background: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.Edit .edit-form button:hover {
+    background: #dddddd;
+    transform: translateY(-3px);
+}
+
+/* Agregado: Barras de progreso */
+.Edit .progress-bar {
+    width: 100%;
+    background-color: #333333;
+    height: 5px;
+    border-radius: 2.5px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.Edit .progress-bar::after {
+    content: "";
+    display: block;
+    width: 75%; /* Ejemplo de progreso al 75% */
+    height: 100%;
+    background: #ffffff;
+    border-radius: 2.5px;
+    transition: width 0.3s ease;
+}
+
+.Actualizar{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 2%;
+}
+
+/* Previsualización */
+.Edit .preview {
+    flex: 1 1 40%;
+    background: linear-gradient(145deg, #1e1e1e, #252525);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+    border: 1px solid #333333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Edit .preview:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.8);
+}
+
+.Edit .preview h2 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.Edit .preview-content {
+    text-align: left;
+}
+
+.Edit .preview-image {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 2px solid #333333;
+}
+
+.Edit .preview h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.Edit .preview p {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    text-align: justify;
+    color: #d8d8d8;
+}
+
+.preview strong {
+    color: #ffffff;
+}
+
+/* Botones del header */
+.Edit .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid #333333;
+}
+
+.Edit .header .btn {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background: none;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.Edit .header .btn:hover {
+    background: #ffffff;
+    color: #0d0d0d;
+}
+
+.Edit .header .btn i {
+    margin-right: 0.5rem;
+    font-size: 25px;
+}
+.Edit .header span {
+    font-size: 1rem;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .edit-form,
+    .preview {
+        flex: 1 1 100%;
+    }
+
+    .Edit .header span{
+        display: none;
+    }
+}

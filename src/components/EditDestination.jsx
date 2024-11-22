@@ -73,62 +73,115 @@ export const EditDestination = () => {
     };
 
     return (
-        <main className="EditDestination">
-            <form onSubmit={handleEdit}>
-                <h1>Editar Destino</h1>
-                {error && <p className="error">{error}</p>} {/* Mostrar mensaje de error si ocurre */}
-                <fieldset>
-                    <label>
-                        <span>Nombre del destino</span>
-                        <input 
-                            name="name"
-                            type="text"
-                            value={destination.name}
-                            onChange={handleChange}
-                            required
-                        />
-                    </label>
-                    <label>
-                        <span>Descripción</span>
-                        <textarea 
-                            name="review"
-                            value={destination.review}
-                            onChange={handleChange}
-                            required
-                        />
-                    </label>
-                    <label>
-                        <span>Ubicación</span>
-                        <input 
-                            name="location"
-                            type="text"
-                            value={destination.location}
-                            onChange={handleChange}
-                            required
-                        />
-                    </label>
-                    <label>
-                        <span>Calificación</span>
-                        <input 
-                            name="rating"
-                            type="text"
-                            value={destination.rating}
-                            onChange={handleChange}
-                            required
-                        />
-                    </label>
-                    <label>
-                        <span>Imagen (URL)</span>
-                        <input 
-                            name="imageUrl"
-                            type="url"
-                            value={destination.imageUrl}
-                            onChange={handleChange}
-                        />
-                    </label>
-                </fieldset>
-                <button>Actualizar Destino</button>
-            </form>
+        <main className="Edit">
+            <header className="header">
+                <button onClick={() => navigate("/")} className="btn">
+                    <i className="bx bx-home-alt-2"></i>
+                    <span>Página Principal</span>
+                </button>
+    
+                <button onClick={() => navigate("/Results")} className="btn">
+                    <i className="bx bx-bookmark-alt-plus"></i>
+                    <span>Mis Destinos</span>
+                </button>
+    
+                <button
+                    onClick={() => {
+                        localStorage.removeItem("user");
+                        navigate("/");
+                    }}
+                    className="btn"
+                >
+                    <i className="bx bx-log-out"></i>
+                    <span>Cerrar Sesión</span>
+                </button>
+            </header>
+            <div className="content">
+                {/* Formulario de edición */}
+                <form onSubmit={handleEdit} className="edit-form">
+                    <h1>Editar Destino</h1>
+                    {error && <p className="error">{error}</p>} {/* Mostrar mensaje de error si ocurre */}
+                    <fieldset>
+                        <label>
+                            <span>Nombre del destino</span>
+                            <input
+                                name="name"
+                                type="text"
+                                value={destination.name}
+                                onChange={handleChange}
+                                required
+                            />
+                        </label>
+                        <label>
+                            <span>Descripción</span>
+                            <textarea
+                                name="review"
+                                value={destination.review}
+                                onChange={handleChange}
+                                required
+                            />
+                        </label>
+                        <label>
+                            <span>Ubicación</span>
+                            <input
+                                name="location"
+                                type="text"
+                                value={destination.location}
+                                onChange={handleChange}
+                                required
+                            />
+                        </label>
+                        <label>
+                            <span>Calificación</span>
+                            <input
+                                name="rating"
+                                type="text"
+                                value={destination.rating}
+                                onChange={handleChange}
+                                required
+                            />
+                        </label>
+                        <label>
+                            <span>Imagen (URL)</span>
+                            <input
+                                name="imageUrl"
+                                type="url"
+                                value={destination.imageUrl}
+                                onChange={handleChange}
+                            />
+                        </label>
+                    </fieldset>
+                    <button className="Actualizar">Actualizar Destino</button>
+                </form>
+    
+                {/* Previsualización */}
+                <div className="preview">
+                    <h2>Previsualización</h2>
+                    <div className="preview-content">
+                        {destination.imageUrl && (
+                            <img
+                                src={destination.imageUrl}
+                                alt="Destino"
+                                className="preview-image"
+                            />
+                        )}
+                        <h3>{destination.name || "Nombre del destino"}</h3>
+                        <p>
+                            <strong>Descripción:</strong>{" "}
+                            {destination.review || "Agrega una descripción..."}
+                        </p>
+                        <p>
+                            <strong>Ubicación:</strong>{" "}
+                            {destination.location || "Agrega una ubicación..."}
+                        </p>
+                        <p>
+                            <strong>Calificación:</strong>{" "}
+                            {destination.rating || "0"}
+                        </p>
+                    </div>
+                </div>
+            </div>
         </main>
     );
+    
 };

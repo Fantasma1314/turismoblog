@@ -15,8 +15,8 @@ export const Results = () => {
 
             // Verificar si el usuario es administrador
             if (
-                storedUser.email === "admin@correo.com" && // Cambiar por el correo del admin
-                storedUser.password === "admin123" // Cambiar por la contraseña del admin
+                storedUser.email === "jacobo@gmail.com" && // Cambiar por el correo del admin
+                storedUser.password === "12345678" // Cambiar por la contraseña del admin
             ) {
                 setIsAdmin(true);
             }
