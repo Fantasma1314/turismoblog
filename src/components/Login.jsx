@@ -10,7 +10,7 @@ export const Login = () => {
         const correo = event.target.elements.correo.value;
         const pass = event.target.elements.password.value;
 
-        const response = await fetch("https://6622071827fcd16fa6c8818c.mockapi.io/api/v1/users");
+        const response = await fetch("https://6740ae34d0b59228b7f0fabb.mockapi.io/users");
         const users = await response.json();
 
         const user = users.find(user => user.email === correo && user.password === pass);

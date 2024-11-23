@@ -15,7 +15,7 @@ export const Results = () => {
 
             // Verificar si el usuario es administrador
             if (
-                storedUser.email === "jacobo@gmail.com" && // Cambiar por el correo del admin
+                storedUser.email === "Dorama@gmail.com" && // Cambiar por el correo del admin
                 storedUser.password === "12345678" // Cambiar por la contraseña del admin
             ) {
                 setIsAdmin(true);
@@ -26,10 +26,10 @@ export const Results = () => {
         }
 
         // Obtener destinos turísticos
-        fetch("https://6622071827fcd16fa6c8818c.mockapi.io/api/v1/blogs")
+        fetch("https://6740ae34d0b59228b7f0fabb.mockapi.io/blogs/")
             .then((response) => response.json())
             .then((results) => {
-                if (storedUser.email === "jacobo@gmail.com" && storedUser.password === "12345678") {
+                if (storedUser.email === "Dorama@gmail.com" && storedUser.password === "12345678") {
                     // Si es administrador, mostrar todos los destinos
                     setLocations(results);
                 } else {
@@ -50,7 +50,7 @@ export const Results = () => {
     const handleDelete = async (locationId) => {
         try {
             await fetch(
-                `https://6622071827fcd16fa6c8818c.mockapi.io/api/v1/blogs/${locationId}`,
+                `https://6740ae34d0b59228b7f0fabb.mockapi.io/blogs/${locationId}`,
                 {
                     method: "DELETE",
                 }

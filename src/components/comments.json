@@ -1,0 +1,26 @@
+    [
+        {
+        "id": 1,
+        "user": "Juan Pérez",
+        "comment": "¡Ecuador es increíble! Me encantó visitar la Amazonía.",
+        "rating": 5
+        },
+        {
+        "id": 2,
+        "user": "María López",
+        "comment": "Las Islas Galápagos son un paraíso. Quiero regresar pronto.",
+        "rating": 4
+        },
+        {
+        "id": 3,
+        "user": "Carlos García",
+        "comment": "La Sierra tiene paisajes hermosos, me encantó el Cotopaxi.",
+        "rating": 5
+        },
+        {
+        "id": 4,
+        "user": "Nube Arévalo",
+        "comment": "Me sorprendio la diversidad de Ecuador",
+        "rating": 5
+        }
+    ]

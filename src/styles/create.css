@@ -36,18 +36,12 @@
     padding: 0.8rem 1rem;
     font-size: 1rem;
     font-weight: bold;
-    color: #ffffff;
+    color: #000000;
     background: none;
-    border: 1px solid #ffffff;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-}
+    background: linear-gradient(135deg, #cb8111, #fcf825);
 
-.CreateDestination .header .btn:hover {
-    background: #ffffff;
-    color: #0d0d0d;
-    transform: translateY(-3px);
 }
 
 .CreateDestination .header .btn i {
@@ -111,8 +105,8 @@
 
 .CreateDestination .form input:focus,
 .CreateDestination .form textarea:focus {
-    border-color: #ffffff;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    border-color: #f1f506;
+    box-shadow: 0 0 8px rgba(251, 255, 0, 0.945);
     outline: none;
 }
 

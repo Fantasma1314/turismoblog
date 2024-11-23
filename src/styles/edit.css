@@ -37,7 +37,6 @@
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
     text-align: center;
-    text-transform: uppercase;
     letter-spacing: 1px;
 }
 
@@ -72,8 +71,8 @@
 
 .Edit.edit-form input:focus,
 .edit-form textarea:focus {
-    border-color: #ffffff;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    border-color: #fffb00;
+    box-shadow: 0 0 8px rgba(238, 255, 0, 0.87);
     outline: none;
 }
 
@@ -191,22 +190,17 @@
 }
 
 .Edit .header .btn {
-    display: flex;
+    Display: flex;
     align-items: center;
+    gap: 0.5rem;
     padding: 0.8rem 1rem;
     font-size: 1rem;
     font-weight: bold;
-    color: #ffffff;
+    color: #000000;
     background: none;
-    border: 1px solid #ffffff;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.Edit .header .btn:hover {
-    background: #ffffff;
-    color: #0d0d0d;
+    background: linear-gradient(135deg, #cb8111, #fcf825);
 }
 
 .Edit .header .btn i {

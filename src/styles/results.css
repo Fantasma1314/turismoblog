@@ -15,6 +15,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    margin: auto;
     background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
     display: flex;
@@ -26,9 +27,9 @@ body {
     margin: 10px;
 }
 
-.btn {
-    background-color: #3a3a3a;
-    color: white;
+.Results .btn {
+    background: linear-gradient(135deg, #cb8111, #fcf825);
+    color: rgb(0, 0, 0);
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -36,15 +37,21 @@ body {
     display: flex;
     align-items: center;
     gap: 5px;
-    font-size: 14px;
+    font-size: 17px;
     transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-    background-color: #575757;
+.Results .btn i{
+    font-size: 22px;
 }
 
-.card-container {
+.Results .btn:hover {
+    background-color: #575757;
+    transform: scale(1.05);
+
+}
+
+.Results .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
@@ -52,7 +59,7 @@ body {
     text-align: justify;
 }
 
-.card {
+.Results .card {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
@@ -61,12 +68,12 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
+.Results .card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
-.card-background {
+.Results .card-background {
     width: 100%;
     height: 200px;
     background-size: cover;
@@ -75,33 +82,33 @@ body {
     transition: filter 0.3s ease;
 }
 
-.card:hover .card-background {
+.Results .card:hover .card-background {
     filter: brightness(1);
 }
 
-.card-content {
+.Results .card-content {
     padding: 15px;
 }
 
-.card-content h3 {
+.Results .card-content h3 {
     margin: 0 0 10px;
     font-size: 18px;
     color: #fff;
 }
 
-.card-content p {
+.Results .card-content p {
     margin: 5px 0;
     font-size: 14px;
     color: #ccc;
 }
 
-.actions {
+.Results .actions {
     display: flex;
     gap: 10px;
     margin-top: 10px;
 }
 
-.actions button {
+.Results .actions button {
     background-color: #3a3a3a;
     border: none;
     padding: 8px;
@@ -115,17 +122,108 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.actions button:hover {
+.Results .actions button:hover {
     background-color: #575757;
 }
 
-.Results i {
+.Results .Results i {
     font-size: 2rem;
 }
 
-.Results span {
+.Results .Results span {
     font-size: 1rem;
 }
+
+/* Sección de destinos turísticos */
+.destinations-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cards adaptables a cualquier pantalla */
+    gap: 20px;
+    padding: 20px;
+}
+
+.destination-card {
+    background-color: #353535;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-card:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.destination-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffffff; /* Verde oscuro */
+}
+
+.destination-card p {
+    margin: 10px 0;
+    color: #ffffff; /* Color del texto */
+    font-size: 1rem;
+}
+
+.destination-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Call to Action */
+.call-to-action {
+    width: 100%; /* Ocupa todo el ancho */
+    background: linear-gradient(135deg, #cb8111, #fcf825);
+    color: #000000; /* Texto blanco */
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 40px;
+    border-radius: 10px; /* Bordes redondeados opcionales */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.call-to-action h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.call-to-action p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.call-to-action .btn-highlight {
+    background-color: #000000; /* Botón amarillo */
+    color: #ffffff; /* Texto verde oscuro */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.call-to-action .btn-highlight:hover {
+    transform: scale(1.1); /* Efecto de zoom */
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    background-color: #222222; /* Fondo oscuro */
+    color: #fff;
+    padding: 20px;
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+
 
 /* Responsive design */
 @media screen and (max-width: 768px) {
